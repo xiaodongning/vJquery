@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="layui/css/layui.css">
+    <script src="js/vQuery.js"></script>
+    <script src="js/common.js"></script>
+    <script>
+        function Person(name,sex){
+            this.name = name;
+            this.sex = sex;
+        }
+        Person.prototype.showName = function(){
+            alert('名字是：'+this.name);
+        }
+        Person.prototype.showSex = function(){
+            alert('性别：'+this.sex);
+        }
+        var p = new Person('xiao','男');
+
+        $(function(){
+           $('.btn').click(function(){
+                $(this).hide();
+            });
+            
+            $('#btn').click(function(){
+                alert($('#btn').css('backgroundColor','#369'));
+            });
+        });
+    </script>
+</head>
+<body>
+    <button class="layui-btn" id="btn">隐藏</button>
+    <button class="btn"  id="btn2">显示</button>
+    <button class="layui-btn layui-btn-primary">默认</button>
+
+    <div style="width:100px;height:100px;background:#369;display:none;">
+
+    </div>
+</body>
+</html>
